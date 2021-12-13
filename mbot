@@ -1,0 +1,25 @@
+#include <MeMCore.h>
+#include <Arduino.h>
+#include <Wire.h>
+#include <SoftwareSerial.h>
+
+MeDCMotor motordestra_9(9);
+MeDCMotor motorsinistra_10(10);
+
+void move(int direction, int speed)
+{
+int leftSpeed = 100;
+int rightSpeed = 100;
+if(direction == 1){
+leftSpeed = speed;
+rightSpeed = speed;
+}else if(direction == 2){
+leftSpeed = -speed;
+rightSpeed = -speed;
+}else if(direction == 3){
+leftSpeed = -speed;
+rightSpeed = speed;
+}else if(direction == 4){
+leftSpeed = speed;
+rightSpeed = -speed;
+}
